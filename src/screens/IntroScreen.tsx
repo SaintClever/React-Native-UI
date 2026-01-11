@@ -1,9 +1,12 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, StyleSheet, TouchableOpacity } from "react-native";
+import { Logo } from "../assets/Icons";
 
 const IntroScreen = () => {
   return (
     <View style={styles.container}>
-      <Text>Stylish</Text>
+      <TouchableOpacity>
+        <Logo />
+      </TouchableOpacity>
     </View>
   );
 };
@@ -13,6 +16,7 @@ export default IntroScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
   },

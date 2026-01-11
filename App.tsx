@@ -1,5 +1,5 @@
-import IntroScreen from "./src/screens/IntroScreen";
+import LogInScreen from "./src/screens/LogInScreen";
 
 export default function App() {
-  return <IntroScreen />;
+  return <LogInScreen />;
 }
