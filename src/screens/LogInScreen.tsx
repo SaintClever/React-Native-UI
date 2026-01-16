@@ -6,6 +6,21 @@ import FangLogo from "../components/FangLogo";
 import { Google, Apple, Facebook } from "../assets/Icons";
 
 const LogInScreen = () => {
+  const companyLogos = [
+    {
+      "id": 0,
+      "name": <Google />
+    },
+    {
+      "id": 1,
+      "name": <Apple />,
+    },
+    {
+      "id": 2,
+      "name": <Facebook />
+    }
+  ];
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome Back!</Text>
@@ -41,9 +56,9 @@ const LogInScreen = () => {
           width: s(194),
           justifyContent: "space-between",
         }}>
-          <FangLogo logo={<Google />} />
-          <FangLogo logo={<Apple />} />
-          <FangLogo logo={<Facebook />} />
+          {companyLogos.map((company) => (
+            <FangLogo logo={company.name} key={company.id}/>
+          ))}
         </View>
         <Text style={{ marginTop: vs(25), color: "#575757" }}>
           Create An Account <Text style={{ fontWeight: 600, textDecorationLine: "underline", color: "#F83758" }}>Sign Up</Text>
