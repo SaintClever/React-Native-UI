@@ -2,6 +2,8 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { s, vs } from "react-native-size-matters";
 import InputField from "../components/InputField";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import FangLogo from "../components/FangLogo";
+import { Google, Apple, Facebook } from "../assets/Icons";
 
 const LogInScreen = () => {
   return (
@@ -27,6 +29,26 @@ const LogInScreen = () => {
           Login
         </Text>
       </TouchableOpacity>
+      <View style={{
+        marginTop: vs(75),
+        justifyContent: "center",
+        alignItems: "center",
+      }}>
+        <Text style={{ color: "#575757" }}>- OR Continue with -</Text>
+        <View style={{
+          marginTop: vs(15),
+          flexDirection: "row",
+          width: s(194),
+          justifyContent: "space-between",
+        }}>
+          <FangLogo logo={<Google />} />
+          <FangLogo logo={<Apple />} />
+          <FangLogo logo={<Facebook />} />
+        </View>
+        <Text style={{ marginTop: vs(25), color: "#575757" }}>
+          Create An Account <Text style={{ fontWeight: 600, textDecorationLine: "underline", color: "#F83758" }}>Sign Up</Text>
+        </Text>
+      </View>
     </View>
   );
 };
