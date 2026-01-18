@@ -1,6 +1,5 @@
-import LogInScreen from "./src/screens/LogInScreen";
+import GetStartedScreen from "./src/screens/GetStartedScreen";
 
 export default function App() {
-  // return <GetStartedScreen />;
-  return <LogInScreen />;
+  return <GetStartedScreen />;
 }
