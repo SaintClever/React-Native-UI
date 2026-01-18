@@ -1,6 +1,7 @@
-import { Text, StyleSheet, ImageBackground, StatusBar } from "react-native";
-import { s } from "react-native-size-matters";
+import { Text, StyleSheet, ImageBackground, StatusBar, TouchableOpacity } from "react-native";
+import { s, vs } from "react-native-size-matters";
 import { LinearGradient } from 'expo-linear-gradient';
+import MaintButton from "../components/MainButton";
 
 
 const GetStartedScreen = () => {
@@ -20,6 +21,10 @@ const GetStartedScreen = () => {
       <Text style={styles.title}>
         You want Authentic, here you go!
       </Text>
+      <Text style={styles.subtitle}>
+        Find it here, buy it now!
+      </Text>
+      <MaintButton title={"Get Started"} />
     </ImageBackground>
   );
 };
@@ -41,5 +46,13 @@ const styles = StyleSheet.create({
     fontSize: s(34),
     textAlign: "center",
     paddingHorizontal: s(40),
+    marginTop: vs(250)
+  },
+  subtitle: {
+    marginTop: vs(14),
+    marginBottom: vs(44),
+    fontWeight: 400,
+    fontSize: s(14),
+    color: "#F2F2F2",
   }
 });

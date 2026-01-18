@@ -4,6 +4,7 @@ import InputField from "../components/InputField";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import FangLogo from "../components/FangLogo";
 import { Google, Apple, Facebook } from "../assets/Icons";
+import MaintButton from "../components/MainButton";
 
 const LogInScreen = () => {
   const companyLogos = [
@@ -31,19 +32,8 @@ const LogInScreen = () => {
         secureTextEntry={true}
         iconTwo={<Ionicons name="eye" size={20} color="#626262" />}
       />
-      <Text style={styles.subText}>Forgot Password?</Text>
-
-      <TouchableOpacity style={styles.button}>
-        <Text
-          style={{
-            color: "#FFFFFF",
-            fontWeight: 600,
-            fontSize: s(20),
-          }}
-        >
-          Login
-        </Text>
-      </TouchableOpacity>
+      <Text style={styles.subtext}>Forgot Password?</Text>
+      <MaintButton title={"Login"}/>
       <View style={{
         marginTop: vs(75),
         justifyContent: "center",
@@ -80,19 +70,12 @@ const styles = StyleSheet.create({
     fontSize: s(36),
     paddingRight: s(126),
   },
-  subText: {
+  subtext: {
     marginTop: s(9),
+    marginBottom: vs(52),
     textAlign: "right",
     fontWeight: 400,
     fontSize: s(12),
     color: "#F83758",
-  },
-  button: {
-    marginTop: vs(52),
-    height: vs(40),
-    borderRadius: s(4),
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F83758",
-  },
+  }
 });
