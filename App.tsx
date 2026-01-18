@@ -1,5 +1,5 @@
-import GetStartedScreen from "./src/screens/GetStartedScreen";
+import ShoppingScreen from "./src/screens/ShoppingScreen";
 
 export default function App() {
-  return <GetStartedScreen />;
+  return <ShoppingScreen />;
 }

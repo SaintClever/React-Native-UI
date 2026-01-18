@@ -1,4 +1,4 @@
-import { Text, StyleSheet, ImageBackground, StatusBar, TouchableOpacity } from "react-native";
+import { Text, StyleSheet, ImageBackground, StatusBar } from "react-native";
 import { s, vs } from "react-native-size-matters";
 import { LinearGradient } from 'expo-linear-gradient';
 import MaintButton from "../components/MainButton";

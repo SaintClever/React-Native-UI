@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { s, vs } from "react-native-size-matters";
 import InputField from "../components/InputField";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -6,7 +6,7 @@ import FangLogo from "../components/FangLogo";
 import { Google, Apple, Facebook } from "../assets/Icons";
 import MaintButton from "../components/MainButton";
 
-const LogInScreen = () => {
+const LoginScreen = () => {
   const companyLogos = [
     {
       "id": 0,
@@ -58,7 +58,7 @@ const LogInScreen = () => {
   );
 };
 
-export default LogInScreen;
+export default LoginScreen;
 
 const styles = StyleSheet.create({
   container: {
