@@ -2,7 +2,7 @@ import { View, Text, StyleSheet } from "react-native";
 import { s, vs } from "react-native-size-matters";
 import Ellipse from "../components/Ellipse";
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
-import WeekendSaleList from "../components/WeekendSaleList";
+import WeekendSale from "../components/WeekendSale";
 
 
 const ShoppingScreen = () => {
@@ -20,7 +20,7 @@ const ShoppingScreen = () => {
           <Text style={styles.letsStartShopping}>Let's start shopping!</Text>
         </View>
       </View>
-      <WeekendSaleList />
+      <WeekendSale />
       <View style={styles.categoriesContainer}>
         <Text style={styles.categories}>Top Categories</Text>
         <Text style={styles.seeAll}>See All</Text>

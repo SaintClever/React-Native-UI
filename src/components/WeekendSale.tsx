@@ -1,38 +1,48 @@
-import { FC } from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { FC, useState } from "react";
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
 import { s, vs } from "react-native-size-matters";
 
-interface WeekendSaleProps {
-  dealCopy: string,
-  buttonCopy: string,
-  buttonColor?: string,
-  buttonCopyColor?: string,
-  bgColor: string,
-}
 
-// const ACTIVE_BG = "#1383F1";
-// const ACTIVE_BTN = "#50D63B";
-// const ACTIVE_TXT = "#FFFFFF";
-// const INACTIVE_TXT = "#F17547";
+const copyArr = [
+  "20% OFF DURING THE WEEKEND",
+  "30% OFF DURING THE WEEKEND"
+];
 
-const WeekendSale: FC<WeekendSaleProps> = ({
-  dealCopy,
-  buttonCopy,
-  buttonColor,
-  buttonCopyColor,
-  bgColor
-}) => {
+const ACTIVE_BG = "#1383F1";
+const ACTIVE_BTN = "#50D63B";
+const ACTIVE_TXT = "#FFFFFF";
+const INACTIVE_TXT = "#F17547";
+
+const WeekendSale = () => {
+  const [activeTab, setActiveTab] = useState("20% OFF DURING THE WEEKEND");
+
   return (
-    <TouchableOpacity>
-      <View style={[ styles.container, { backgroundColor: bgColor }]}>
-        <Text style={styles.copy}>{ dealCopy }</Text>
-        <View style={[styles.button, { backgroundColor: buttonColor }]}>
-          <Text style={{ fontWeight: 700, color: buttonCopyColor }}>
-            { buttonCopy }
-          </Text>
-        </View>
+    <ScrollView
+      horizontal={true}
+      showsHorizontalScrollIndicator={false}
+    >
+      <View style={styles.container}>
+        {
+          copyArr.map((copy) => {
+            const isActive = activeTab === copy;
+            return (
+              <TouchableOpacity
+                style={[styles.tab, isActive && { backgroundColor: ACTIVE_BG}]}
+                onPress={() => setActiveTab(copy)}
+                key={copy}
+              >
+                <Text style={styles.copy}>{copy}</Text>
+                <View style={[styles.button, isActive && { backgroundColor: ACTIVE_BTN }]}>
+                  <Text style={isActive ? styles.activeText : styles.inActiveText}>
+                    Get Now
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            );
+          })
+        }
       </View>
-    </TouchableOpacity>
+    </ScrollView>
   );
 };
 
@@ -40,11 +50,18 @@ export default WeekendSale;
 
 const styles = StyleSheet.create({
   container: {
+    flexDirection: "row",
+    gap: s(15),
+    marginTop: vs(15),
+    paddingHorizontal: s(20),
+  },
+  tab: {
     width: s(275),
     height: vs(115),
     borderRadius: s(15),
     justifyContent: "center",
     paddingHorizontal: s(19),
+    backgroundColor: "#F17547",
   },
   copy: {
     color: "#FFFFFF",
@@ -59,5 +76,14 @@ const styles = StyleSheet.create({
     borderRadius: s(18),
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "#FFFFFF",
+  },
+  activeText: {
+    color: ACTIVE_TXT,
+    fontWeight: 700,
+  },
+  inActiveText: {
+    color: INACTIVE_TXT,
+    fontWeight: 700,
   }
 });
