@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
 import { s, vs } from "react-native-size-matters";
 
@@ -14,7 +14,7 @@ const ACTIVE_TXT = "#FFFFFF";
 const INACTIVE_TXT = "#F17547";
 
 const WeekendSale = () => {
-  const [activeTab, setActiveTab] = useState("20% OFF DURING THE WEEKEND");
+  const [activeCard, setActiveCard] = useState("20% OFF DURING THE WEEKEND");
 
   return (
     <ScrollView
@@ -24,11 +24,11 @@ const WeekendSale = () => {
       <View style={styles.container}>
         {
           copyArr.map((copy) => {
-            const isActive = activeTab === copy;
+            const isActive = activeCard === copy;
             return (
               <TouchableOpacity
-                style={[styles.tab, isActive && { backgroundColor: ACTIVE_BG}]}
-                onPress={() => setActiveTab(copy)}
+                style={[styles.card, isActive && { backgroundColor: ACTIVE_BG}]}
+                onPress={() => setActiveCard(copy)}
                 key={copy}
               >
                 <Text style={styles.copy}>{copy}</Text>
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     marginTop: vs(15),
     paddingHorizontal: s(20),
   },
-  tab: {
+  card: {
     width: s(275),
     height: vs(115),
     borderRadius: s(15),
