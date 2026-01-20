@@ -5,54 +5,25 @@ import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import WeekendSaleList from "../components/WeekendSaleList";
 
 
-
 const ShoppingScreen = () => {
   return(
     <View>
-      <View style={{
-        marginTop: vs(58),
-        marginHorizontal: s(23),
-      }}>
-        <View style={{
-          flexDirection: "row",
-          justifyContent: "space-between",
-        }}>
+      <View style={styles.mainContainer}>
+        <View style={styles.subContainer}>
           <Ellipse icon="align-left" />
           <Ellipse icon="magnifying-glass" />
         </View>
-        
         <View>
-          <Text style={{
-            marginTop: vs(37),
-            fontWeight: 600,
-            fontSize: s(20),
-          }}>
+          <Text style={styles.helloFola}>
             Hello Fola <MaterialCommunityIcons name="hand-wave-outline" size={17} color="#F17547" />
           </Text>
-          <Text style={{
-            marginTop: vs(9),
-            fontWeight: 600,
-            color: "#808080",
-          }}>Let's start shopping!</Text>
+          <Text style={styles.letsStartShopping}>Let's start shopping!</Text>
         </View>
       </View>
       <WeekendSaleList />
-      <View style={{
-        marginTop: vs(20),
-        marginHorizontal: s(23),
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
-      }}>
-        <Text style={{
-          fontWeight: 600,
-          fontSize: s(20)
-        }}>Top Categories</Text>
-        <Text style={{
-          fontWeight: 500,
-          fontSize: s(16),
-          color: "#F17547",
-        }}>See All</Text>
+      <View style={styles.categoriesContainer}>
+        <Text style={styles.categories}>Top Categories</Text>
+        <Text style={styles.seeAll}>See All</Text>
       </View>
       <View>
 
@@ -63,4 +34,39 @@ const ShoppingScreen = () => {
 
 export default ShoppingScreen;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  mainContainer: {
+    marginTop: vs(58),
+    marginHorizontal: s(23),
+  },
+  subContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  helloFola: {
+    marginTop: vs(37),
+    fontWeight: 600,
+    fontSize: s(20),
+  },
+  letsStartShopping: {
+    marginTop: vs(9),
+    fontWeight: 600,
+    color: "#808080",
+  },
+  categoriesContainer: {
+    marginTop: vs(20),
+    marginHorizontal: s(23),
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  categories: {
+    fontWeight: 600,
+    fontSize: s(20)
+  },
+  seeAll: {
+    fontWeight: 500,
+    fontSize: s(16),
+    color: "#F17547",
+  }
+});
