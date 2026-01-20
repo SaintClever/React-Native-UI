@@ -10,6 +10,11 @@ interface WeekendSaleProps {
   bgColor: string,
 }
 
+// const ACTIVE_BG = "#1383F1";
+// const ACTIVE_BTN = "#50D63B";
+// const ACTIVE_TXT = "#FFFFFF";
+// const INACTIVE_TXT = "#F17547";
+
 const WeekendSale: FC<WeekendSaleProps> = ({
   dealCopy,
   buttonCopy,
