@@ -4,16 +4,15 @@ import { data } from "../data/Data";
 import { s, vs } from "react-native-size-matters";
 
 const WeekendSaleList = () => {
-  console.log(data);
   return (
     <FlatList
       data={data}
       horizontal={true}
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={{
-        gap: s(16),
-        paddingHorizontal: s(16),
-        paddingTop: vs(15),
+        gap: s(15),
+        marginTop: vs(15),
+        paddingHorizontal: s(20),
       }}
       keyExtractor={item => item.id.toString()}
       renderItem={({item}) => 
@@ -22,7 +21,8 @@ const WeekendSaleList = () => {
           buttonCopy={item.button_copy}
           buttonColor={item.button_color}
           buttonCopyColor={item.button_copy_color}
-          bgColor={item.bg_color} />
+          bgColor={item.bg_color}
+        />
       }
     />
   );

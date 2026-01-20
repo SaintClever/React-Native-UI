@@ -3,7 +3,7 @@ import { s, vs } from "react-native-size-matters";
 import { FC, ReactNode } from "react";
 
 interface FangLogoProps {
-  logo: ReactNode,
+  logo: ReactNode;
 }
 
 const FangLogos: FC<FangLogoProps> = ({ logo }) => {

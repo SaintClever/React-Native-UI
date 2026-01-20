@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { View, Text, StyleSheet, Button, FlatList } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { s, vs } from "react-native-size-matters";
 
 interface WeekendSaleProps {
@@ -10,40 +10,49 @@ interface WeekendSaleProps {
   bgColor: string,
 }
 
-const WeekendSale: FC<WeekendSaleProps> = ({ dealCopy, buttonCopy, buttonColor, buttonCopyColor, bgColor }) => {
+const WeekendSale: FC<WeekendSaleProps> = ({
+  dealCopy,
+  buttonCopy,
+  buttonColor,
+  buttonCopyColor,
+  bgColor
+}) => {
   return (
-    <View style={{
-      width: s(275),
-      height: vs(115),
-      borderRadius: s(15),
-      backgroundColor: bgColor,
-      justifyContent: "center",
-      paddingHorizontal: s(19),
-    }}>
-      <Text style={{
-        color: "#FFFFFF",
-        fontWeight: 700,
-        fontSize: s(16),
-        paddingRight: s(19),
-        marginBottom: vs(14),
-      }}>{ dealCopy }</Text>
-      <View style={{
-        width: s(80),
-        height: vs(34),
-        borderRadius: s(18),
-        backgroundColor: buttonColor,
-        justifyContent: "center",
-        alignItems: "center",
-      }}>
-        <Text style={{
-          fontWeight: 700,
-          color: buttonCopyColor,
-        }}>{ buttonCopy }</Text>
+    <TouchableOpacity>
+      <View style={[ styles.container, { backgroundColor: bgColor }]}>
+        <Text style={styles.copy}>{ dealCopy }</Text>
+        <View style={[styles.button, { backgroundColor: buttonColor }]}>
+          <Text style={{ fontWeight: 700, color: buttonCopyColor }}>
+            { buttonCopy }
+          </Text>
+        </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
 export default WeekendSale;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    width: s(275),
+    height: vs(115),
+    borderRadius: s(15),
+    justifyContent: "center",
+    paddingHorizontal: s(19),
+  },
+  copy: {
+    color: "#FFFFFF",
+    fontWeight: 700,
+    fontSize: s(16),
+    paddingRight: s(19),
+    marginBottom: vs(14),
+  },
+  button: {
+    width: s(80),
+    height: vs(34),
+    borderRadius: s(18),
+    justifyContent: "center",
+    alignItems: "center",
+  }
+});

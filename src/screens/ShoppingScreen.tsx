@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, FlatList, Button } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { s, vs } from "react-native-size-matters";
 import Ellipse from "../components/Ellipse";
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
@@ -37,6 +37,26 @@ const ShoppingScreen = () => {
         </View>
       </View>
       <WeekendSaleList />
+      <View style={{
+        marginTop: vs(20),
+        marginHorizontal: s(23),
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+      }}>
+        <Text style={{
+          fontWeight: 600,
+          fontSize: s(20)
+        }}>Top Categories</Text>
+        <Text style={{
+          fontWeight: 500,
+          fontSize: s(16),
+          color: "#F17547",
+        }}>See All</Text>
+      </View>
+      <View>
+
+      </View>
     </View>
   );
 };

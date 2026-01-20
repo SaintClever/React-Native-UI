@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TextInput } from "react-native";
+import { View, StyleSheet, TextInput } from "react-native";
 import { FC, ReactNode } from "react";
 import { s, vs } from "react-native-size-matters";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -17,20 +17,7 @@ const InputField: FC<InputFieldProps> = ({
   iconTwo,
 }) => {
   return (
-    <View
-      style={{
-        flexDirection: "row",
-        alignItems: "center",
-        height: vs(40),
-        backgroundColor: "#F3F3F3",
-        borderWidth: s(1),
-        borderColor: "#A8A8A9",
-        borderRadius: s(5),
-        paddingHorizontal: s(10),
-        gap: s(5),
-        marginTop: s(30),
-      }}
-    >
+    <View style={styles.container}>
       icon={<Ionicons name={icon} size={20} color="#626262" />}
       <TextInput
         style={{ flex: 1 }}
@@ -43,3 +30,18 @@ const InputField: FC<InputFieldProps> = ({
 };
 
 export default InputField;
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    alignItems: "center",
+    height: vs(40),
+    backgroundColor: "#F3F3F3",
+    borderWidth: s(1),
+    borderColor: "#A8A8A9",
+    borderRadius: s(5),
+    paddingHorizontal: s(10),
+    gap: s(5),
+    marginTop: s(30),
+  }
+});
