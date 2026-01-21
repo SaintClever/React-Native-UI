@@ -3,6 +3,7 @@ import { s, vs } from "react-native-size-matters";
 import Ellipse from "../components/Ellipse";
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import WeekendSale from "../components/WeekendSale";
+import CategoriesList from "../components/CategoriesList";
 
 
 const ShoppingScreen = () => {
@@ -25,9 +26,14 @@ const ShoppingScreen = () => {
         <Text style={styles.categories}>Top Categories</Text>
         <Text style={styles.seeAll}>See All</Text>
       </View>
-      <View>
 
+      <View style={{
+        marginTop:vs(27),
+        marginHorizontal: s(23),
+      }}>
+        <CategoriesList />
       </View>
+      
     </View>
   );
 };
