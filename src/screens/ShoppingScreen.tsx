@@ -4,6 +4,7 @@ import Ellipse from "../components/Ellipse";
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import WeekendSale from "../components/WeekendSale";
 import CategoriesList from "../components/CategoriesList";
+import Card from "../components/Card";
 
 
 const ShoppingScreen = () => {
@@ -26,14 +27,15 @@ const ShoppingScreen = () => {
         <Text style={styles.categories}>Top Categories</Text>
         <Text style={styles.seeAll}>See All</Text>
       </View>
+      <CategoriesList />
 
       <View style={{
-        marginTop:vs(27),
+        gap: s(23),
+        marginTop: vs(33),
         marginHorizontal: s(23),
       }}>
-        <CategoriesList />
+        <Card />
       </View>
-      
     </View>
   );
 };
