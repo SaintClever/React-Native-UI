@@ -1,14 +1,14 @@
 import { View, Text, StyleSheet } from "react-native";
 import { s, vs } from "react-native-size-matters";
 import Ellipse from "../components/Ellipse";
-import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import WeekendSale from "../components/WeekendSale";
 import CategoriesList from "../components/CategoriesList";
 import Card from "../components/Card";
-
+import CardsList from "../components/CardsList";
 
 const ShoppingScreen = () => {
-  return(
+  return (
     <View>
       <View style={styles.mainContainer}>
         <View style={styles.subContainer}>
@@ -17,7 +17,12 @@ const ShoppingScreen = () => {
         </View>
         <View>
           <Text style={styles.helloFola}>
-            Hello Fola <MaterialCommunityIcons name="hand-wave-outline" size={17} color="#F17547" />
+            Hello Fola{" "}
+            <MaterialCommunityIcons
+              name="hand-wave-outline"
+              size={17}
+              color="#F17547"
+            />
           </Text>
           <Text style={styles.letsStartShopping}>Let's start shopping!</Text>
         </View>
@@ -28,13 +33,14 @@ const ShoppingScreen = () => {
         <Text style={styles.seeAll}>See All</Text>
       </View>
       <CategoriesList />
-
-      <View style={{
-        gap: s(23),
-        marginTop: vs(25),
-        marginHorizontal: s(23),
-      }}>
-        <Card />
+      <View
+        style={{
+          gap: s(23),
+          marginTop: vs(25),
+          marginHorizontal: s(23),
+        }}
+      >
+        <CardsList />
       </View>
     </View>
   );
@@ -70,11 +76,11 @@ const styles = StyleSheet.create({
   },
   categories: {
     fontWeight: 600,
-    fontSize: s(20)
+    fontSize: s(20),
   },
   seeAll: {
     fontWeight: 500,
     fontSize: s(16),
     color: "#F17547",
-  }
+  },
 });
