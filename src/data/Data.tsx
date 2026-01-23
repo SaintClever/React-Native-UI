@@ -11,7 +11,7 @@ export const DATA = [
     id: "2",
     sale: "50% OFF",
     image: require("../assets/2.png"),
-    title: "Apple Watch - series 6",
+    title: "Apple Watch",
     currentPrice: "₦ 45,000",
     originalPrice: "₦ 55,000",
   },
