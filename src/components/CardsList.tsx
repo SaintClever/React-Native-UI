@@ -10,6 +10,7 @@ const CardsList = () => {
       numColumns={2}
       columnWrapperStyle={{
         justifyContent: "space-between",
+        // marginBottom: vs(16),
       }}
       contentContainerStyle={
         {

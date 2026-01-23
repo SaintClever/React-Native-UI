@@ -3,11 +3,15 @@ import {
   Text,
   StyleSheet,
   Image,
+  Dimensions,
   ImageSourcePropType,
 } from "react-native";
 import { s, vs } from "react-native-size-matters";
 import { Heart } from "../assets/Icons";
 import { FC } from "react";
+
+const PhoneWidth = Dimensions.get("window").width;
+const cardWidth = (PhoneWidth - s(16) * 4) / 2;
 
 interface CardProps {
   sale?: string;
@@ -114,12 +118,11 @@ export default Card;
 
 const styles = StyleSheet.create({
   container: {
-    width: s(150),
+    width: cardWidth,
     height: vs(160),
     borderRadius: s(15),
     backgroundColor: "#F8F8F8",
-    marginRight: s(5),
-    marginVertical: vs(5),
+    marginBottom: vs(16),
   },
   activeContainer: {
     borderWidth: s(1),
