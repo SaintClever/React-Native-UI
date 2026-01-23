@@ -31,7 +31,7 @@ const ShoppingScreen = () => {
 
       <View style={{
         gap: s(23),
-        marginTop: vs(33),
+        marginTop: vs(25),
         marginHorizontal: s(23),
       }}>
         <Card />
