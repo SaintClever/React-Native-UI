@@ -11,7 +11,11 @@ interface CategoryProps {
   onPress?: () => void;
 }
 
-const Category: React.FC<CategoryProps> = ({ Icon, isSelected = false, onPress }) => {
+const Category: React.FC<CategoryProps> = ({
+  Icon,
+  isSelected = false,
+  onPress,
+}) => {
   const iconColor = isSelected ? "white" : "black";
 
   return (

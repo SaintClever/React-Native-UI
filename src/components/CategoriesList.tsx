@@ -21,7 +21,7 @@ const CategoriesList = () => {
       horizontal
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={{
-        gap: s(23),
+        gap: s(15),
         marginTop: vs(27),
         marginHorizontal: s(23),
       }}
