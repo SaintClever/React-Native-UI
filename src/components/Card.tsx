@@ -3,6 +3,7 @@ import {
   Text,
   StyleSheet,
   Image,
+  TouchableOpacity,
   Dimensions,
   ImageSourcePropType,
 } from "react-native";
@@ -29,7 +30,7 @@ const Card: FC<CardProps> = ({
   originalPrice,
 }) => {
   return (
-    <View
+    <TouchableOpacity
       style={[
         styles.container,
         // styles.activeContainer
@@ -39,13 +40,13 @@ const Card: FC<CardProps> = ({
         <View
           style={[
             styles.halfOffContainer,
-            // styles.ActivehalfOffContainer
+            // { backgroundColor: "#50D63B" }
           ]}
         >
           <Text
             style={[
               styles.halfOffText,
-              // styles.activeHalfOffText
+              // { color: "#FFFFFF"},
             ]}
           >
             {sale}
@@ -110,7 +111,7 @@ const Card: FC<CardProps> = ({
           {originalPrice}
         </Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -145,12 +146,6 @@ const styles = StyleSheet.create({
   halfOffText: {
     fontWeight: 600,
     fontSize: s(10),
-  },
-  activeHalfOffText: {
-    color: "#FFFFFF",
-  },
-  ActivehalfOffContainer: {
-    backgroundColor: "#50D63B",
   },
   heartContainer: {
     width: s(22),
