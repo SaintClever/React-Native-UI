@@ -37,20 +37,8 @@ const Card: FC<CardProps> = ({
       ]}
     >
       <View style={styles.subContainer}>
-        <View
-          style={[
-            styles.halfOffContainer,
-            // { backgroundColor: "#50D63B" }
-          ]}
-        >
-          <Text
-            style={[
-              styles.halfOffText,
-              // { color: "#FFFFFF"},
-            ]}
-          >
-            {sale}
-          </Text>
+        <View style={[styles.halfOffContainer, { backgroundColor: "#50D63B" }]}>
+          <Text style={[styles.halfOffText, { color: "#FFFFFF" }]}>{sale}</Text>
         </View>
         <View style={styles.heartContainer}>
           <Heart />
@@ -79,6 +67,7 @@ const Card: FC<CardProps> = ({
           style={{
             fontWeight: 500,
             fontSize: s(14),
+            color: "#1383F1",
           }}
         >
           {title}
