@@ -1,5 +1,10 @@
 import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { Logo } from "../assets/Icons";
+import { RootStackParamsList } from "../navigation/RootStackParamsList";
+import { useNavigation } from "@react-navigation/native";
+import type { StackNavigationProp } from "@react-navigation/stack";
+
+type IntroNavProp = StackNavigationProp<RootStackParamsList, "IntroScreen">;
 
 const IntroScreen = () => {
   const navigation = useNavigation();
