@@ -5,8 +5,14 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import FangLogo from "../components/FangLogo";
 import { Google, Apple, Facebook } from "../assets/Icons";
 import MaintButton from "../components/MainButton";
+import { useState } from "react";
 
 const LoginScreen = () => {
+  const [form, setForm] = useState({
+    email: "",
+    password: "",
+  });
+
   const companyLogos = [
     {
       id: 0,
@@ -25,12 +31,21 @@ const LoginScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome Back!</Text>
-      <InputField icon={"person"} placeholder={"Username or Email"} />
+      <InputField
+        icon={"person"}
+        placeholder={"Username or Email"}
+        value={form.email}
+        onChangeText={(text) => setForm((prev) => ({ ...prev, email: text }))}
+      />
       <InputField
         icon={"lock-closed"}
         placeholder={"Password"}
         secureTextEntry={true}
         iconTwo={<Ionicons name="eye" size={20} color="#626262" />}
+        value={form.password}
+        onChangeText={(text) =>
+          setForm((prev) => ({ ...prev, password: text }))
+        }
       />
       <Text style={styles.subtext}>Forgot Password?</Text>
       <MaintButton title={"Login"} />

@@ -8,6 +8,8 @@ interface InputFieldProps {
   placeholder: string;
   secureTextEntry?: boolean;
   iconTwo?: ReactNode;
+  value: string;
+  onChangeText: (text: string) => void;
 }
 
 const InputField: FC<InputFieldProps> = ({
@@ -15,16 +17,21 @@ const InputField: FC<InputFieldProps> = ({
   placeholder,
   secureTextEntry,
   iconTwo,
+  value,
+  onChangeText,
 }) => {
   return (
     <View style={styles.container}>
-      icon={<Ionicons name={icon} size={20} color="#626262" />}
+      <Ionicons name={icon as any} size={20} color="#626262" />
+      {/* icon={<Ionicons name={icon} size={20} color="#626262" />} */}
       <TextInput
         style={{ flex: 1 }}
         placeholder={placeholder}
         secureTextEntry={secureTextEntry}
+        value={value}
+        onChangeText={onChangeText}
       />
-      iconTwo={iconTwo}
+      {iconTwo}
     </View>
   );
 };
@@ -43,5 +50,5 @@ const styles = StyleSheet.create({
     paddingHorizontal: s(10),
     gap: s(5),
     marginTop: s(30),
-  }
+  },
 });

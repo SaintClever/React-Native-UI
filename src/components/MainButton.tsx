@@ -3,15 +3,13 @@ import { s, vs } from "react-native-size-matters";
 import { FC } from "react";
 
 interface MaintButtonProps {
-  title: string
+  title: string;
 }
 
 const MaintButton: FC<MaintButtonProps> = ({ title }) => {
   return (
     <TouchableOpacity style={styles.button}>
-      <Text style={styles.title}>
-        {title}
-      </Text>
+      <Text style={styles.title}>{title}</Text>
     </TouchableOpacity>
   );
 };
@@ -31,5 +29,5 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#F83758",
-  }
+  },
 });
