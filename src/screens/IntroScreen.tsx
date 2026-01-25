@@ -7,7 +7,7 @@ import type { StackNavigationProp } from "@react-navigation/stack";
 type IntroNavProp = StackNavigationProp<RootStackParamsList, "IntroScreen">;
 
 const IntroScreen = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<IntroNavProp>();
 
   return (
     <View style={styles.container}>

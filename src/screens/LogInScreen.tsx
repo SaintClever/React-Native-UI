@@ -9,17 +9,17 @@ import MaintButton from "../components/MainButton";
 const LoginScreen = () => {
   const companyLogos = [
     {
-      "id": 0,
-      "name": <Google />
+      id: 0,
+      name: <Google />,
     },
     {
-      "id": 1,
-      "name": <Apple />,
+      id: 1,
+      name: <Apple />,
     },
     {
-      "id": 2,
-      "name": <Facebook />
-    }
+      id: 2,
+      name: <Facebook />,
+    },
   ];
 
   return (
@@ -33,25 +33,38 @@ const LoginScreen = () => {
         iconTwo={<Ionicons name="eye" size={20} color="#626262" />}
       />
       <Text style={styles.subtext}>Forgot Password?</Text>
-      <MaintButton title={"Login"}/>
-      <View style={{
-        marginTop: vs(75),
-        justifyContent: "center",
-        alignItems: "center",
-      }}>
+      <MaintButton title={"Login"} />
+      <View
+        style={{
+          marginTop: vs(75),
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         <Text style={{ color: "#575757" }}>- OR Continue with -</Text>
-        <View style={{
-          marginTop: vs(15),
-          flexDirection: "row",
-          width: s(194),
-          justifyContent: "space-between",
-        }}>
+        <View
+          style={{
+            marginTop: vs(15),
+            flexDirection: "row",
+            width: s(194),
+            justifyContent: "space-between",
+          }}
+        >
           {companyLogos.map((company) => (
-            <FangLogo logo={company.name} key={company.id}/>
+            <FangLogo logo={company.name} key={company.id} />
           ))}
         </View>
         <Text style={{ marginTop: vs(25), color: "#575757" }}>
-          Create An Account <Text style={{ fontWeight: 600, textDecorationLine: "underline", color: "#F83758" }}>Sign Up</Text>
+          Create An Account{" "}
+          <Text
+            style={{
+              fontWeight: 600,
+              textDecorationLine: "underline",
+              color: "#F83758",
+            }}
+          >
+            Sign Up
+          </Text>
         </Text>
       </View>
     </View>
@@ -77,5 +90,5 @@ const styles = StyleSheet.create({
     fontWeight: 400,
     fontSize: s(12),
     color: "#F83758",
-  }
+  },
 });
