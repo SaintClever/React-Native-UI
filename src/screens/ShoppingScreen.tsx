@@ -4,7 +4,6 @@ import Ellipse from "../components/Ellipse";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import WeekendSale from "../components/WeekendSale";
 import CategoriesList from "../components/CategoriesList";
-import Card from "../components/Card";
 import CardsList from "../components/CardsList";
 
 const ShoppingScreen = () => {

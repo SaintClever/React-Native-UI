@@ -2,9 +2,11 @@ import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { Logo } from "../assets/Icons";
 
 const IntroScreen = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate("LoginScreen")}>
         <Logo />
       </TouchableOpacity>
     </View>
