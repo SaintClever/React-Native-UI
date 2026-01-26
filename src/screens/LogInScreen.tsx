@@ -48,7 +48,10 @@ const LoginScreen = () => {
         }
       />
       <Text style={styles.subtext}>Forgot Password?</Text>
-      <MaintButton title={"Login"} />
+      <MaintButton
+        title={"Login"}
+        onPress={() => console.log(form.email, form.password)}
+      />
       <View
         style={{
           marginTop: vs(75),
@@ -70,7 +73,7 @@ const LoginScreen = () => {
           ))}
         </View>
         <Text style={{ marginTop: vs(25), color: "#575757" }}>
-          Create An Account{" "}
+          {`Create An Account `}
           <Text
             style={{
               fontWeight: 600,

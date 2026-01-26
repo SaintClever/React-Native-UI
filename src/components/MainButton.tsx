@@ -4,11 +4,12 @@ import { FC } from "react";
 
 interface MaintButtonProps {
   title: string;
+  onPress: () => void;
 }
 
-const MaintButton: FC<MaintButtonProps> = ({ title }) => {
+const MaintButton: FC<MaintButtonProps> = ({ title, onPress }) => {
   return (
-    <TouchableOpacity style={styles.button}>
+    <TouchableOpacity style={styles.button} onPress={onPress}>
       <Text style={styles.title}>{title}</Text>
     </TouchableOpacity>
   );
