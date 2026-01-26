@@ -7,7 +7,7 @@ interface MaintButtonProps {
   onPress: () => void;
 }
 
-const MaintButton: FC<MaintButtonProps> = ({ title, onPress }) => {
+const MainButton: FC<MaintButtonProps> = ({ title, onPress }) => {
   return (
     <TouchableOpacity style={styles.button} onPress={onPress}>
       <Text style={styles.title}>{title}</Text>
@@ -15,7 +15,7 @@ const MaintButton: FC<MaintButtonProps> = ({ title, onPress }) => {
   );
 };
 
-export default MaintButton;
+export default MainButton;
 
 const styles = StyleSheet.create({
   title: {

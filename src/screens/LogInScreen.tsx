@@ -1,13 +1,19 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Alert } from "react-native";
 import { s, vs } from "react-native-size-matters";
 import InputField from "../components/InputField";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import FangLogo from "../components/FangLogo";
 import { Google, Apple, Facebook } from "../assets/Icons";
-import MaintButton from "../components/MainButton";
+import MainButton from "../components/MainButton";
 import { useState } from "react";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { RootStackParamsList } from "../navigation/RootStackParamsList";
+import { useNavigation } from "@react-navigation/native";
+
+type LoginNavProp = StackNavigationProp<RootStackParamsList, "LoginScreen">;
 
 const LoginScreen = () => {
+  const navigation = useNavigation<LoginNavProp>();
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -48,9 +54,16 @@ const LoginScreen = () => {
         }
       />
       <Text style={styles.subtext}>Forgot Password?</Text>
-      <MaintButton
+      <MainButton
         title={"Login"}
-        onPress={() => console.log(form.email, form.password)}
+        onPress={() => {
+          if (form.email !== "" && form.password !== "") {
+            // console.log(form.email, form.password);
+            navigation.navigate("GetStartedScreen");
+          } else {
+            Alert.alert("No username / email or password");
+          }
+        }}
       />
       <View
         style={{
