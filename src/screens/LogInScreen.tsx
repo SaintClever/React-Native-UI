@@ -61,7 +61,7 @@ const LoginScreen = () => {
             // console.log(form.email, form.password);
             navigation.navigate("GetStartedScreen");
           } else {
-            Alert.alert("No username (email)\\n or password detected");
+            Alert.alert("No username (email) or password detected");
           }
         }}
       />

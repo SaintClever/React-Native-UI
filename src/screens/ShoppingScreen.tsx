@@ -1,47 +1,55 @@
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet, ScrollView, StatusBar } from "react-native";
 import { s, vs } from "react-native-size-matters";
 import Ellipse from "../components/Ellipse";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import WeekendSale from "../components/WeekendSale";
 import CategoriesList from "../components/CategoriesList";
 import CardsList from "../components/CardsList";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 const ShoppingScreen = () => {
   return (
-    <ScrollView showsHorizontalScrollIndicator={false}>
-      <View style={styles.mainContainer}>
-        <View style={styles.subContainer}>
-          <Ellipse icon="align-left" />
-          <Ellipse icon="magnifying-glass" />
-        </View>
-        <View>
-          <Text style={styles.helloFola}>
-            Hello Fola{" "}
-            <MaterialCommunityIcons
-              name="hand-wave-outline"
-              size={17}
-              color="#F17547"
-            />
-          </Text>
-          <Text style={styles.letsStartShopping}>Let's start shopping!</Text>
-        </View>
-      </View>
-      <WeekendSale />
-      <View style={styles.categoriesContainer}>
-        <Text style={styles.categories}>Top Categories</Text>
-        <Text style={styles.seeAll}>See All</Text>
-      </View>
-      <CategoriesList />
-      <View
-        style={{
-          gap: s(23),
-          marginTop: vs(25),
-          marginHorizontal: s(23),
-        }}
-      >
-        <CardsList />
-      </View>
-    </ScrollView>
+    <SafeAreaProvider>
+      <SafeAreaView>
+        <ScrollView showsHorizontalScrollIndicator={false}>
+          <StatusBar barStyle={"dark-content"} />
+          <View style={styles.mainContainer}>
+            <View style={styles.subContainer}>
+              <Ellipse icon="align-left" />
+              <Ellipse icon="magnifying-glass" />
+            </View>
+            <View>
+              <Text style={styles.helloFola}>
+                Hello Fola{" "}
+                <MaterialCommunityIcons
+                  name="hand-wave-outline"
+                  size={17}
+                  color="#F17547"
+                />
+              </Text>
+              <Text style={styles.letsStartShopping}>
+                Let's start shopping!
+              </Text>
+            </View>
+          </View>
+          <WeekendSale />
+          <View style={styles.categoriesContainer}>
+            <Text style={styles.categories}>Top Categories</Text>
+            <Text style={styles.seeAll}>See All</Text>
+          </View>
+          <CategoriesList />
+          <View
+            style={{
+              gap: s(23),
+              marginTop: vs(25),
+              marginHorizontal: s(23),
+            }}
+          >
+            <CardsList />
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 };
 

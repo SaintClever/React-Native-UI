@@ -9,7 +9,7 @@ const Stack = createStackNavigator<RootStackParamsList>();
 
 function CreateStackNav() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="IntroScreen" component={IntroScreen} />
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="GetStartedScreen" component={GetStartedScreen} />
