@@ -1,11 +1,20 @@
 import { Text, StyleSheet, ImageBackground, StatusBar } from "react-native";
 import { s, vs } from "react-native-size-matters";
-import { LinearGradient } from 'expo-linear-gradient';
+import { LinearGradient } from "expo-linear-gradient";
 import MaintButton from "../components/MainButton";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { RootStackParamsList } from "../navigation/RootStackParamsList";
+import { useNavigation } from "@react-navigation/native";
 
+type GetStartedNavProp = StackNavigationProp<
+  RootStackParamsList,
+  "GetStartedScreen"
+>;
 
 const GetStartedScreen = () => {
-  return(
+  const navigation = useNavigation<GetStartedNavProp>();
+
+  return (
     <ImageBackground
       source={require("../assets/ImageBackground.png")}
       resizeMode="cover"
@@ -18,13 +27,12 @@ const GetStartedScreen = () => {
         end={{ x: 0.5, y: 1 }}
         style={styles.gradient}
       />
-      <Text style={styles.title}>
-        You want Authentic, here you go!
-      </Text>
-      <Text style={styles.subtitle}>
-        Find it here, buy it now!
-      </Text>
-      <MaintButton title={"Get Started"} />
+      <Text style={styles.title}>You want Authentic, here you go!</Text>
+      <Text style={styles.subtitle}>Find it here, buy it now!</Text>
+      <MaintButton
+        title={"Get Started"}
+        onPress={() => navigation.navigate("ShoppingScreen")}
+      />
     </ImageBackground>
   );
 };
@@ -46,7 +54,7 @@ const styles = StyleSheet.create({
     fontSize: s(34),
     textAlign: "center",
     paddingHorizontal: s(40),
-    marginTop: vs(250)
+    marginTop: vs(250),
   },
   subtitle: {
     marginTop: vs(14),
@@ -54,5 +62,5 @@ const styles = StyleSheet.create({
     fontWeight: 400,
     fontSize: s(14),
     color: "#F2F2F2",
-  }
+  },
 });

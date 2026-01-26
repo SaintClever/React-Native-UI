@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { s, vs } from "react-native-size-matters";
 import Ellipse from "../components/Ellipse";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
@@ -8,7 +8,7 @@ import CardsList from "../components/CardsList";
 
 const ShoppingScreen = () => {
   return (
-    <View>
+    <ScrollView showsHorizontalScrollIndicator={false}>
       <View style={styles.mainContainer}>
         <View style={styles.subContainer}>
           <Ellipse icon="align-left" />
@@ -41,7 +41,7 @@ const ShoppingScreen = () => {
       >
         <CardsList />
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
