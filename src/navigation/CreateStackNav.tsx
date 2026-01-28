@@ -4,6 +4,7 @@ import LoginScreen from "../screens/LoginScreen";
 import GetStartedScreen from "../screens/GetStartedScreen";
 import ShoppingScreen from "../screens/ShoppingScreen";
 import { RootStackParamsList } from "./RootStackParamsList";
+import TabStackNav from "./TabStackNav";
 
 const Stack = createStackNavigator<RootStackParamsList>();
 
@@ -14,6 +15,7 @@ function CreateStackNav() {
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="GetStartedScreen" component={GetStartedScreen} />
       <Stack.Screen name="ShoppingScreen" component={ShoppingScreen} />
+      <Stack.Screen name="TabStackNav" component={TabStackNav} />
     </Stack.Navigator>
   );
 }

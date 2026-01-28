@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Alert } from "react-native";
+import { View, Text, StyleSheet, Alert, ScrollView } from "react-native";
 import { s, vs } from "react-native-size-matters";
 import InputField from "../components/InputField";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -35,70 +35,72 @@ const LoginScreen = () => {
   ];
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Welcome Back!</Text>
-      <InputField
-        icon={"person"}
-        placeholder={"Username or Email"}
-        value={form.email}
-        onChangeText={(text) => setForm((prev) => ({ ...prev, email: text }))}
-      />
-      <InputField
-        icon={"lock-closed"}
-        placeholder={"Password"}
-        secureTextEntry={true}
-        iconTwo={<Ionicons name="eye" size={20} color="#626262" />}
-        value={form.password}
-        onChangeText={(text) =>
-          setForm((prev) => ({ ...prev, password: text }))
-        }
-      />
-      <Text style={styles.subtext}>Forgot Password?</Text>
-      <MainButton
-        title={"Login"}
-        onPress={() => {
-          if (form.email !== "" && form.password !== "") {
-            // console.log(form.email, form.password);
-            navigation.navigate("GetStartedScreen");
-          } else {
-            Alert.alert("No username (email) or password detected");
+    <ScrollView>
+      <View style={styles.container}>
+        <Text style={styles.title}>Welcome Back!</Text>
+        <InputField
+          icon={"person"}
+          placeholder={"Username or Email"}
+          value={form.email}
+          onChangeText={(text) => setForm((prev) => ({ ...prev, email: text }))}
+        />
+        <InputField
+          icon={"lock-closed"}
+          placeholder={"Password"}
+          secureTextEntry={true}
+          iconTwo={<Ionicons name="eye" size={20} color="#626262" />}
+          value={form.password}
+          onChangeText={(text) =>
+            setForm((prev) => ({ ...prev, password: text }))
           }
-        }}
-      />
-      <View
-        style={{
-          marginTop: vs(75),
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Text style={{ color: "#575757" }}>- OR Continue with -</Text>
+        />
+        <Text style={styles.subtext}>Forgot Password?</Text>
+        <MainButton
+          title={"Login"}
+          onPress={() => {
+            if (form.email !== "" && form.password !== "") {
+              // console.log(form.email, form.password);
+              navigation.navigate("GetStartedScreen");
+            } else {
+              Alert.alert("No username (email) or password detected");
+            }
+          }}
+        />
         <View
           style={{
-            marginTop: vs(15),
-            flexDirection: "row",
-            width: s(194),
-            justifyContent: "space-between",
+            marginTop: vs(75),
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
-          {companyLogos.map((company) => (
-            <FangLogo logo={company.name} key={company.id} />
-          ))}
-        </View>
-        <Text style={{ marginTop: vs(25), color: "#575757" }}>
-          {`Create An Account `}
-          <Text
+          <Text style={{ color: "#575757" }}>- OR Continue with -</Text>
+          <View
             style={{
-              fontWeight: 600,
-              textDecorationLine: "underline",
-              color: "#F83758",
+              marginTop: vs(15),
+              flexDirection: "row",
+              width: s(194),
+              justifyContent: "space-between",
             }}
           >
-            Sign Up
+            {companyLogos.map((company) => (
+              <FangLogo logo={company.name} key={company.id} />
+            ))}
+          </View>
+          <Text style={{ marginTop: vs(25), color: "#575757" }}>
+            {`Create An Account `}
+            <Text
+              style={{
+                fontWeight: 600,
+                textDecorationLine: "underline",
+                color: "#F83758",
+              }}
+            >
+              Sign Up
+            </Text>
           </Text>
-        </Text>
+        </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

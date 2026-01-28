@@ -3,4 +3,5 @@ export type RootStackParamsList = {
   LoginScreen: undefined;
   GetStartedScreen: undefined;
   ShoppingScreen: undefined;
+  TabStackNav: undefined;
 };
